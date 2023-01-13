@@ -75,4 +75,26 @@ public class TollCalculationServiceTest {
         assertEquals(39, tollCalculationService.calculateTollFees(new Car(),date, date1, date2));
     }
 
+    @Test
+    public void test_TollFee_WithDifferentDatesWithRange() {
+        LocalDateTime date = DateUtility.parse("09-01-2023 06:15:00");
+        LocalDateTime date1 = DateUtility.parse("09-01-2023 07:30:00");
+        LocalDateTime date2 = DateUtility.parse("09-01-2023 08:15:00");
+        LocalDateTime date3 = DateUtility.parse("09-01-2023 15:15:00");
+        LocalDateTime date4 = DateUtility.parse("09-01-2023 16:45:00");
+        LocalDateTime date5 = DateUtility.parse("09-01-2023 17:15:00");
+        assertEquals(60, tollCalculationService.calculateTollFees(new Car(),date, date1, date2, date3, date4, date5));
+    }
+
+    @Test
+    public void test_TollFee_WithDifferentDatesWithMoreThan60SEK() {
+        LocalDateTime date = DateUtility.parse("09-01-2023 06:15:00");
+        LocalDateTime date1 = DateUtility.parse("09-01-2023 07:30:00");
+        LocalDateTime date2 = DateUtility.parse("09-01-2023 08:15:00");
+        LocalDateTime date3 = DateUtility.parse("09-01-2023 15:15:00");
+        LocalDateTime date4 = DateUtility.parse("09-01-2023 16:45:00");
+        LocalDateTime date5 = DateUtility.parse("09-01-2023 18:20:00");
+        assertEquals(60, tollCalculationService.calculateTollFees(new Car(),date, date1, date2, date3, date4, date5));
+    }
+
 }
