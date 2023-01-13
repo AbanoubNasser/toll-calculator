@@ -1,0 +1,46 @@
+fees:
+  - fromHour: 6
+    toHour: 6
+    fromMinute: 0
+    toMinute: 29
+    fees: 8
+  - fromHour: 6
+    toHour: 6
+    fromMinute: 30
+    toMinute: 59
+    fees: 13
+  - fromHour: 7
+    toHour: 7
+    fromMinute: 0
+    toMinute: 59
+    fees: 18
+  - fromHour: 8
+    toHour: 8
+    fromMinute: 0
+    toMinute: 29
+    fees: 13
+  - fromHour: 8
+    toHour: 14
+    fromMinute: 30
+    toMinute: 59
+    fees: 8
+  - fromHour: 15
+    toHour: 15
+    fromMinute: 0
+    toMinute: 29
+    fees: 13
+  - fromHour: 15
+    toHour: 16
+    fromMinute: 0
+    toMinute: 59
+    fees: 18
+  - fromHour: 17
+    toHour: 17
+    fromMinute: 0
+    toMinute: 59
+    fees: 13
+  - fromHour: 18
+    toHour: 18
+    fromMinute: 0
+    toMinute: 29
+    fees: 8
