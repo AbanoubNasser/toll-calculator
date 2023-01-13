@@ -32,7 +32,7 @@ public class TollCalculationValidatorTest {
         LocalDateTime date1 = DateUtility.parse("02-01-2023 10:00:00");
         LocalDateTime date2 = DateUtility.parse("03-01-2023 12:00:00");
         LocalDateTime date3 = DateUtility.parse("04-01-2023 21:00:00");
-        assertThrows(NotSameDateException.class, () -> tollCalculationValidator.validateTollSameDates(date1,date2, date3));
+        assertThrows(NotSameDateException.class, () -> tollCalculationValidator.validateTollSameDates(date1, date2, date3));
     }
-    
+
 }

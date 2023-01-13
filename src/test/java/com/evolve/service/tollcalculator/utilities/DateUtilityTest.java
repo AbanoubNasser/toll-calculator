@@ -2,10 +2,10 @@ package com.evolve.service.tollcalculator.utilities;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-
 import java.text.ParseException;
 import java.time.LocalDateTime;
+
+import static org.junit.Assert.assertEquals;
 
 public class DateUtilityTest {
     @Test

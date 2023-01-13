@@ -10,5 +10,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class TollTimeSlotsFees {
+
     private List<TollTimeSlotFee> fees;
 }

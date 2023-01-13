@@ -15,12 +15,12 @@ public class TollTimeSlotFeesConfig {
 
     private static final String TOLL_HOUR_FEE_CONFIG_PATH = "src/main/resources/tollTimeSlotFees.yaml";
 
-    public static Set<TollTimeSlotFee> getTollTimeSlotFees(){
-        try{
+    public static Set<TollTimeSlotFee> getTollTimeSlotFees() {
+        try {
             TollTimeSlotsFees tollTimeSlotsFees = YamlUtility.parseYaml(TOLL_HOUR_FEE_CONFIG_PATH, TollTimeSlotsFees.class);
             return new LinkedHashSet<>(tollTimeSlotsFees.getFees());
-        }catch (Exception exception){
-            throw new YamlParsingException("Error while parsing "+TOLL_HOUR_FEE_CONFIG_PATH);
+        } catch (Exception exception) {
+            throw new YamlParsingException("Error while parsing " + TOLL_HOUR_FEE_CONFIG_PATH);
         }
     }
 }

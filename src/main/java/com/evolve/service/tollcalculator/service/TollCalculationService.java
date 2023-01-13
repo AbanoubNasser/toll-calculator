@@ -3,11 +3,8 @@ package com.evolve.service.tollcalculator.service;
 import com.evolve.service.tollcalculator.config.TollTimeSlotFeesConfig;
 import com.evolve.service.tollcalculator.model.Vehicle;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalField;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**

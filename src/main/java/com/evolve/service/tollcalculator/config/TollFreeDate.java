@@ -1,4 +1,5 @@
 package com.evolve.service.tollcalculator.config;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

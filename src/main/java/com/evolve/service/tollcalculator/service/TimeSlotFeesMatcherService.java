@@ -7,13 +7,16 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+/**
+ * TimeSlotFeesMatcherService is responsible to match the correct time slot for specific datetime and get the fees
+ * for this specific date time
+ */
 public class TimeSlotFeesMatcherService {
 
     public int getFeesByDate(LocalDateTime date) {
 
-
         int hour = date.getHour();
-        int minute =date.getMinute();
+        int minute = date.getMinute();
 
         Predicate<TollTimeSlotFee> tollTimeSlotFeePredicateForSpecificHour = slot -> (slot.getFromHour() == hour && minute >= slot.getFromMinute() && minute <= slot.getToMinute());
 
@@ -22,8 +25,7 @@ public class TimeSlotFeesMatcherService {
             return optionalTollTimeSlotFeeForSpecificHour.get().getFees();
         }
 
-        Predicate<TollTimeSlotFee> tollTimeSlotFeePredicateForSpecificRange = slotForRange -> (hour >= slotForRange.getFromHour() && hour < slotForRange.getToHour() && minute >= slotForRange.getFromMinute()
-                && minute <= slotForRange.getToMinute());
+        Predicate<TollTimeSlotFee> tollTimeSlotFeePredicateForSpecificRange = slotForRange -> (hour >= slotForRange.getFromHour() && hour < slotForRange.getToHour() && minute >= slotForRange.getFromMinute() && minute <= slotForRange.getToMinute());
 
         Optional<TollTimeSlotFee> optionalTollTimeSlotFeeForSpecificRange = findTollTimeSlotFee(tollTimeSlotFeePredicateForSpecificRange);
         if (optionalTollTimeSlotFeeForSpecificRange.isPresent()) {
@@ -34,10 +36,7 @@ public class TimeSlotFeesMatcherService {
     }
 
     private Optional<TollTimeSlotFee> findTollTimeSlotFee(Predicate<TollTimeSlotFee> tollTimeSlotFeePredicate) {
-        return TollTimeSlotFeesConfig
-                .getTollTimeSlotFees()
-                .stream()
-                .filter(slot -> tollTimeSlotFeePredicate.test(slot)).findFirst();
+        return TollTimeSlotFeesConfig.getTollTimeSlotFees().stream().filter(slot -> tollTimeSlotFeePredicate.test(slot)).findFirst();
     }
 
 }

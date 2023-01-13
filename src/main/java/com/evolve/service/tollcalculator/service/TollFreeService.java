@@ -5,9 +5,7 @@ import com.evolve.service.tollcalculator.config.TollFreeVehicleConfig;
 import com.evolve.service.tollcalculator.model.Vehicle;
 import com.evolve.service.tollcalculator.utilities.DateUtility;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 
 public class TollFreeService {
@@ -23,5 +21,4 @@ public class TollFreeService {
         }
         return false;
     }
-
 }

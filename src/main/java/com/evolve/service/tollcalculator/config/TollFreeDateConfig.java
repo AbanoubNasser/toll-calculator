@@ -2,6 +2,7 @@ package com.evolve.service.tollcalculator.config;
 
 import com.evolve.service.tollcalculator.exception.YamlParsingException;
 import com.evolve.service.tollcalculator.utilities.YamlUtility;
+
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Set;
@@ -24,7 +25,7 @@ public class TollFreeDateConfig {
                             .collect(Collectors.toSet()))
                     .collect(Collectors.toSet()).stream().flatMap(Collection::stream).collect(Collectors.toSet());
         } catch (Exception ex) {
-            throw new YamlParsingException("Error while parsing "+TOLL_FREE_DATES_CONFIG_PATH);
+            throw new YamlParsingException("Error while parsing " + TOLL_FREE_DATES_CONFIG_PATH);
         }
     }
 }
