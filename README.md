@@ -1,7 +1,7 @@
 # Toll fee calculator 1.0
 A calculator for vehicle toll fees based on vehicle type and Datetime slots per day.
 
-##Rules
+## Rules
 * Fees will differ between 8 SEK and 18 SEK, depending on the time of day
 * Rush-hour traffic will render the highest fee
 * The maximum fee for one day is 60 SEK
@@ -10,7 +10,7 @@ A calculator for vehicle toll fees based on vehicle type and Datetime slots per 
 * Some vehicle types are fee-free
 * Weekends and holidays are fee-free
 
-##Project Specs
+## Project Specs
 * Java 11
 * Maven
 * Junit
