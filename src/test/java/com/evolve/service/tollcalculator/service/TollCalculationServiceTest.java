@@ -76,6 +76,14 @@ public class TollCalculationServiceTest {
     }
 
     @Test
+    public void test_TollFee_WithDifferentDates_2() {
+        LocalDateTime date = DateUtility.parse("09-01-2023 06:15:00");
+        LocalDateTime date1 = DateUtility.parse("09-01-2023 07:15:00");
+        LocalDateTime date2 = DateUtility.parse("09-01-2023 08:15:00");
+        assertEquals(31, tollCalculationService.calculateTollFees(new Car(), date, date1, date2));
+    }
+
+    @Test
     public void test_TollFee_WithDifferentDatesWithRange() {
         LocalDateTime date = DateUtility.parse("09-01-2023 06:15:00");
         LocalDateTime date1 = DateUtility.parse("09-01-2023 07:30:00");

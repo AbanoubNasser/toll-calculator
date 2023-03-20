@@ -47,7 +47,9 @@ public class TollCalculationService {
         int totalFee = 0;
         for (LocalDateTime date : dates) {
             totalFee = calculateTollFeeForDate(totalFee, intervalStart, date);
-            intervalStart = date;
+            if(ChronoUnit.MINUTES.between(intervalStart, date)>60){
+                intervalStart = date;
+            }
         }
         if (totalFee > TollTimeSlotFeesConfig.MAX_TOTAL_TOLL_FEE_PER_DAY) {
             totalFee = TollTimeSlotFeesConfig.MAX_TOTAL_TOLL_FEE_PER_DAY;
