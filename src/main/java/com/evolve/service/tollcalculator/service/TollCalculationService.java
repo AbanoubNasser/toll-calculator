@@ -15,13 +15,11 @@ public class TollCalculationService {
     private final TollFreeService tollFreeService;
     private final TimeSlotFeesMatcherService timeSlotFeesMatcherService;
     private final TollCalculationValidator tollCalculationValidator;
-    private final TimeUnit timeUnit;
 
     public TollCalculationService() {
         this.tollFreeService = new TollFreeService();
         this.timeSlotFeesMatcherService = new TimeSlotFeesMatcherService();
         this.tollCalculationValidator = new TollCalculationValidator();
-        this.timeUnit = TimeUnit.MINUTES;
     }
 
 
@@ -61,8 +59,7 @@ public class TollCalculationService {
         int nextFee = timeSlotFeesMatcherService.getFeesByDate(date);
         int tempFee = timeSlotFeesMatcherService.getFeesByDate(intervalStart);
 
-        long diffInMillis = ChronoUnit.NANOS.between(intervalStart, date);
-        long minutes = timeUnit.convert(diffInMillis, TimeUnit.MILLISECONDS);
+        long minutes = ChronoUnit.MINUTES.between(intervalStart, date);
 
         if (minutes <= 60) {
             if (totalFee > 0) totalFee -= tempFee;
